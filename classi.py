@@ -17,7 +17,10 @@ class Csvfile():
                 values.append(p)
         file.close()
         return values
-    
+
+
 
 nome_file = "shampoo_sales.csv"
 file = Csvfile(nome_file)
+
+print(file.get_data())
