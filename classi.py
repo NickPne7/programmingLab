@@ -19,5 +19,5 @@ class Csvfile():
         return values
     
 
-
-file = Csvfile()
+nome_file = "shampoo_sales.csv"
+file = Csvfile(nome_file)
