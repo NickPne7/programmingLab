@@ -86,7 +86,7 @@ class Primi():
      
      def __next__(self):
           self.result = 0
-          while self.i <= self.len:
+          while self.i < self.len:
                if self.isPrimo(self.lista[self.i], 2) == True:
                     self.result = self.lista[self.i]
                     self.i = self.i + 1
@@ -98,8 +98,10 @@ class Primi():
      
 lista = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
 
+
 numeri = Primi(lista)
 cercaPrimi = iter(numeri)
+print(list(numeri))
 
 while True:
      try:
