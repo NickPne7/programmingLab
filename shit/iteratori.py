@@ -173,6 +173,10 @@ class Completamento():
           
           
 
+
+
+
+
 lista1 = [7,2,3,4,5]
 lista2 = [7,2,3,8]
 
