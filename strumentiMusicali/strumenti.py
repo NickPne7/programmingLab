@@ -12,17 +12,13 @@ class Strumento():
     def rangeMusicale(self, min, max):
         self.min = min
         self.max = max
+        return [self.min, self.max]
     
     def __str__(self):
         return "marcaStrumento: " + str(self.marcaStrumento) + " prezzo: " + str(self.costo) + " proprietario: " + str(self.proprietario)
     
     def suona(self):
         print("UUUU")
-    
-    def __str__(self):
-        return "musicista: " + str(self.nomeMusicista) + " nome strumento: " + str(self.nomeStrumento) + "\n"
-
-
 
 
 class Tastiera(Strumento):
@@ -49,6 +45,9 @@ class Percussioni(Strumento):
         
     def tipoPelleTamburi(self, tipoPelle):
         self.tipoPelle = tipoPelle
+    
+    def rangeMusicale(self, min, max):
+        return super().rangeMusicale(34, 3000)
     
     
 class Batteria(Percussioni):

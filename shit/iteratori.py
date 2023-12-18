@@ -99,12 +99,88 @@ class Primi():
 lista = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
 
 
-numeri = Primi(lista)
-cercaPrimi = iter(numeri)
-print(list(numeri))
+#numeri = Primi(lista)
+#cercaPrimi = iter(numeri)
+#print(list(numeri))
+#
+#while True:
+#     try:
+#          print(next(cercaPrimi))
+#     except StopIteration:
+#          break
+
+
+#Flusso pari
+
+class flussoPari():
+     def __init__(self, x, delta, y):
+          self.x = x
+          self.delta = delta
+          self.y = y
+          if x < 0 or x > y:
+               raise ValueError("il valore inserito di x o y non è valido!")
+          if delta < 0:
+               raise ValueError("il valore di delta è minore di 0!")
+     
+     def __iter__(self):
+          self.valoreCorrente = self.x
+          return self
+     
+     def __next__(self):
+          if self.valoreCorrente <= self.y:
+               result = self.valoreCorrente
+               self.valoreCorrente += self.delta 
+               return result
+          else:
+               raise StopIteration
+
+
+
+#flusso = flussoPari(3,2,20)
+
+
+#for valore in flusso:
+#     print(valore)
+ 
+ 
+class Completamento():
+     def __init__(self, listaX, listaY):
+          self.listaX = listaX
+          self.listaY = listaY
+          
+     def NotInList(self, element):
+          check = True
+          if element in self.listaY:
+               check = False
+          return check
+     
+     def __iter__(self):
+          self.contatore = 0
+          return self
+     
+     def __next__(self):
+          self.numero = 0
+          
+          while self.contatore < len(self.listaX):
+               if not self.listaX[self.contatore] in self.listaY:
+                    self.numero = self.listaX[self.contatore]
+                    self.contatore += 1
+                    return self.numero
+               self.contatore += 1
+          
+          raise StopIteration
+          
+          
+          
+
+lista1 = [7,2,3,4,5]
+lista2 = [7,2,3,8]
+
+completamento = Completamento(lista1, lista2)
+completamento = iter(completamento)
 
 while True:
      try:
-          print(next(cercaPrimi))
+          print(next(completamento))
      except StopIteration:
           break
