@@ -1,3 +1,6 @@
+
+
+
 class Model():
     def fit(self, data):
 
@@ -42,3 +45,11 @@ class FitTrendModel(TrendModel):
     
     raise NotImplementedError
 
+
+
+
+lista = [2,3,5,6]
+
+prossimoValore = TrendModel()
+
+print(prossimoValore.predict(lista))
