@@ -170,11 +170,6 @@ class Completamento():
           
           raise StopIteration
           
-          
-          
-
-
-
 
 
 lista1 = [7,2,3,4,5]
